@@ -33,11 +33,10 @@
         <ul class="sidebar-menu">
             <li class="header">{{ trans('adminlte_lang::message.header') }}</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
+            <li class="{{ Request::is('home') ? 'active' : '' }}"><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
 
-            <li><a href="{{ url('archivos/create') }}"><i class='fa fa-link'></i> <span>Importar TXT</span></a></li>
-            <li><a href="{{ url('archivos') }}"><i class='fa fa-link'></i> <span>Lista de TXT</span></a></li>
-            <!-- <li><a href="{{ url('artistas') }}"><i class='fa fa-link'></i> <span>Artistas</span></a></li> -->
+            <li class="{{ Request::is('archivos/create') ? 'active' : '' }}"  ><a href="{{ url('archivos/create') }}"><i class='fa fa-link'></i> <span>Importar TXT</span></a></li>
+            <li class="{{ Request::is('archivos') ? 'active' : '' }}"><a href="{{ url('archivos') }}"><i class='fa fa-link'></i> <span>Lista de TXT</span></a></li>
 
             
         </ul><!-- /.sidebar-menu -->

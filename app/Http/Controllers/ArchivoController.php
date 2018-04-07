@@ -19,6 +19,7 @@ class ArchivoController extends AppBaseController
 
     public function __construct(ArchivoRepository $artistaRepo)
     {
+        $this->middleware('auth');
         $this->archivoRepository = $artistaRepo;
     }
 
